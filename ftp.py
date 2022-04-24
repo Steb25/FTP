@@ -41,6 +41,8 @@ class Authorizer(DummyAuthorizer):
         return "elwadfmwMT"
 
     def get_home_dir(self, username):
+        if (username == "zach"):
+            return "/home/pi/"
         # Create folder according the current username
         folder_name = os.path.basename(username.lower())
         directories = ["/home/pi/WebServer/html/{}/".format(folder_name), "/home/pi/WebServer/html/{}".format(folder_name)]
